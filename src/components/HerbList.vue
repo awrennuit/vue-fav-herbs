@@ -3,12 +3,14 @@
     <div class="card" v-for="herb in herbs" :key="herb">
       <h2 class="name">{{ herb.name }}</h2>
       <p class="description">{{ herb.description }}</p>
-      <button class="btn">LEARN MORE</button>
+      <button class="btn" @click="viewHerb(herb.name)">LEARN MORE</button>
     </div>
   </div>
 </template>
 
 <script>
+import router from "../router";
+
 export default {
   data() {
     return {
@@ -39,6 +41,11 @@ export default {
         },
       ],
     };
+  },
+  methods: {
+    viewHerb(name) {
+      router.push({ name: "SelectedHerb", params: { id: name } });
+    },
   },
 };
 </script>
@@ -72,8 +79,8 @@ export default {
 .card {
   background-color: #222;
   border-radius: 10%;
-  box-shadow: 
-    inset 5px 5px 5px #aaa, 
+  box-shadow:
+    inset 5px 5px 5px #aaa,
     inset -5px -5px 5px #666,
     -5px -5px 10px #000;
   color: #ddd;
@@ -93,7 +100,7 @@ export default {
   grid-auto-rows: minmax(50px, auto);
 }
 
-.name{
+.name {
   font-size: 1.8rem;
 }
 </style>
