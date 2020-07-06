@@ -1,17 +1,14 @@
 <template>
   <div id="app">
-    <HerbList />
+    <!-- <router-link to="/">Home</router-link> -->
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import HerbList from "./components/HerbList.vue";
 
 export default {
   name: "App",
-  components: {
-    HerbList,
-  },
 };
 </script>
 
