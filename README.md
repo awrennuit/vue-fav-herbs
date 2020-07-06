@@ -1,24 +1,5 @@
-# fav-herbs
+# Fav Herbs
 
-## Project setup
-```
-npm install
-```
+## Description
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Deepening my Vue.js knowledge by making an entirely custom design featuring some of my favorite herbs.
