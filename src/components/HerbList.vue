@@ -1,8 +1,8 @@
 <template>
   <div class="main-grid">
-    <div class="card" v-for="herb in herbs" :key="herb">
+    <div class="card" v-for="herb in herbList" :key="herb.id">
       <h2 class="name">{{ herb.name }}</h2>
-      <p class="description">{{ herb.description }}</p>
+      <p class="summary">{{ herb.summary }}</p>
       <button class="btn" @click="viewHerb(herb.name)">LEARN MORE</button>
     </div>
   </div>
@@ -14,32 +14,7 @@ import router from "../router";
 export default {
   data() {
     return {
-      herbs: [
-        {
-          name: "Goldenrod",
-          description: "Goldenrod stands tall and shines like the sun.",
-        },
-        {
-          name: "Yarrow",
-          description:
-            "Yarrow's delicate leaves look like a zipper or stitches.",
-        },
-        { name: "Plantain", description: "Plantian is broad and tough." },
-        {
-          name: "Elderberry",
-          description: "Elderberry has kept humans alive for generations.",
-        },
-        {
-          name: "Mugwort",
-          description:
-            "Mugwort's silvery leaves allow us to travel through the veil.",
-        },
-        {
-          name: "Bee Balm",
-          description:
-            "Bee Balm looks like purple spider legs when they're blooming.",
-        },
-      ],
+      herbList: this.$store.state.herbList,
     };
   },
   methods: {
@@ -79,9 +54,7 @@ export default {
 .card {
   background-color: #222;
   border-radius: 10%;
-  box-shadow:
-    inset 5px 5px 5px #aaa,
-    inset -5px -5px 5px #666,
+  box-shadow: inset 5px 5px 5px #aaa, inset -5px -5px 5px #666,
     -5px -5px 10px #000;
   color: #ddd;
   height: 350px;
@@ -89,7 +62,7 @@ export default {
   width: 280px;
 }
 
-.description {
+.summary {
   margin: 0 auto;
   width: 200px;
 }
