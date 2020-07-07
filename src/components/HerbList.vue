@@ -3,7 +3,7 @@
     <div class="card" v-for="herb in herbList" :key="herb.id">
       <h2 class="name">{{ herb.name }}</h2>
       <p class="summary">{{ herb.summary }}</p>
-      <button class="btn" @click="viewHerb(herb.name)">LEARN MORE</button>
+      <button class="btn" @click="viewHerb(herb)">LEARN MORE</button>
     </div>
   </div>
 </template>
@@ -18,8 +18,9 @@ export default {
     };
   },
   methods: {
-    viewHerb(name) {
-      router.push({ name: "SelectedHerb", params: { id: name } });
+    viewHerb(herb) {
+      this.$store.commit("thisHerb", herb);
+      router.push({ name: "SelectedHerb", params: { id: herb.name } });
     },
   },
 };

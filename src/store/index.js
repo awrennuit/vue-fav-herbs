@@ -81,6 +81,10 @@ export default new Vuex.Store({
     },
   },
   getters: {},
-  mutations: {},
+  mutations: {
+    thisHerb(state, payload) {
+      state.selectedHerb = payload;
+    },
+  },
   actions: {},
 });
