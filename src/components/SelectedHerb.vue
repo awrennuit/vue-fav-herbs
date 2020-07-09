@@ -2,22 +2,24 @@
   <div id="main-container">
     <div id="embellishment"></div>
     <img :src="herb.image" alt="" height="300" width="300" />
-    <h2>{{ herb.name }}</h2>
+    <h2 style="color: #ddd;">
+      {{ herb.name }}
+    </h2>
     <div id="content-container">
       <div>
-        <span>Other Names: </span>
+        <span style="color: #dfc800;">Other Names: </span>
         <span>{{ herb.otherNames }}</span>
       </div>
       <div>
-        <span>Description: </span>
+        <span style="color: #dfc800;">Description: </span>
         <span>{{ herb.description }}</span>
       </div>
       <div>
-        <span>Found In: </span>
+        <span style="color: #dfc800;">Found In: </span>
         <span>{{ herb.location }}</span>
       </div>
       <div>
-        <span>Uses: </span>
+        <span style="color: #dfc800;">Uses: </span>
         <span>{{ herb.uses }}</span>
       </div>
     </div>
@@ -45,6 +47,7 @@ img {
 }
 
 #content-container {
+  color: #ddd;
   margin: 0 auto;
   text-align: left;
   width: 500px;
@@ -52,22 +55,22 @@ img {
 
 #embellishment::before,
 #embellishment::after {
-  content: '';
+  content: "";
   height: 200px;
   position: absolute;
   width: 130px;
 }
 
 #embellishment::before {
-  border-top: 3px solid yellow;
-  border-left: 3px solid yellow;
+  border-top: 3px solid #dfc800;
+  border-left: 3px solid #dfc800;
   left: 180px;
   top: -50px;
 }
 
 #embellishment::after {
-  border-right: 3px solid yellow;
-  border-bottom: 3px solid yellow;
+  border-right: 3px solid #dfc800;
+  border-bottom: 3px solid #dfc800;
   bottom: -50px;
   right: 180px;
 }
@@ -78,22 +81,22 @@ img {
 
 #main-container::before,
 #main-container::after {
-  content: '';
+  content: "";
   height: 410px;
   position: absolute;
   width: 270px;
 }
 
 #main-container::before {
-  border-top: 10px solid yellow;
-  border-left: 10px solid yellow;
+  border-top: 10px solid #dfc800;
+  border-left: 10px solid #dfc800;
   left: 200px;
   top: -30px;
 }
 
 #main-container::after {
-  border-right: 10px solid yellow;
-  border-bottom: 10px solid yellow;
+  border-right: 10px solid #dfc800;
+  border-bottom: 10px solid #dfc800;
   bottom: -30px;
   right: 200px;
 }
