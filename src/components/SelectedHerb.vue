@@ -2,8 +2,8 @@
   <div id="main-container">
     <div id="embellishment"></div>
     <img :src="herb.image" alt="" height="300" width="300" />
-    <p id="back">&#8592;</p>
-    <p id="forward">&#8594;</p>
+    <p id="back" @click="goBack(herb.id)">&#8592;</p>
+    <p id="forward" @click="goForward(herb.id)">&#8594;</p>
     <h2 style="color: #ddd;">
       {{ herb.name }}
     </h2>
@@ -51,6 +51,24 @@ export default {
       immediate: true,
     },
   },
+  methods: {
+    goBack(id) {
+      const herbList = this.$store.state.herbList;
+      if (id - 2 < 0) {
+        this.$router.push(`/${herbList[herbList.length - 1].name}`);
+      } else {
+        this.$router.push(`/${this.$store.state.herbList[id - 2].name}`);
+      }
+    },
+    goForward(id) {
+      const herbList = this.$store.state.herbList;
+      if (id > 5) {
+        this.$router.push(`/${herbList[0].name}`);
+      } else {
+        this.$router.push(`/${this.$store.state.herbList[id].name}`);
+      }
+    },
+  },
 };
 </script>
 
@@ -66,6 +84,7 @@ img {
   font-size: 2rem;
   font-weight: bold;
   position: absolute;
+  z-index: 1;
 }
 
 #back {
