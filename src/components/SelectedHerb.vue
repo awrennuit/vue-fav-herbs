@@ -2,6 +2,8 @@
   <div id="main-container">
     <div id="embellishment"></div>
     <img :src="herb.image" alt="" height="300" width="300" />
+    <p id="back">&#8592;</p>
+    <p id="forward">&#8594;</p>
     <h2 style="color: #ddd;">
       {{ herb.name }}
     </h2>
@@ -33,10 +35,21 @@ export default {
       herb: this.$store.state.selectedHerb,
     };
   },
-  mounted() {
-    if (!this.$store.state.selectedHerb.name) {
-      this.$router.push("/");
-    }
+  watch: {
+    "$route.params": {
+      handler() {
+        for (let herb of this.$store.state.herbList) {
+          if (herb.name === this.$route.params.id) {
+            this.$store.commit("thisHerb", herb);
+            this.$data.herb = this.$store.state.selectedHerb;
+          }
+        }
+        if (this.$store.state.selectedHerb.name !== this.$route.params.id) {
+          this.$router.push("/");
+        }
+      },
+      immediate: true,
+    },
   },
 };
 </script>
@@ -44,6 +57,25 @@ export default {
 <style scoped>
 img {
   object-fit: cover;
+}
+
+#back,
+#forward {
+  color: #dfc800;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: bold;
+  position: absolute;
+}
+
+#back {
+  left: 335px;
+  bottom: 183px;
+}
+
+#forward {
+  left: 604px;
+  bottom: 183px;
 }
 
 #content-container {
