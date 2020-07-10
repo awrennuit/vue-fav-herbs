@@ -12,11 +12,11 @@ export default new Vuex.Store({
         name: "Goldenrod",
         summary: "Goldenrod stands tall and shines like the sun.",
         description:
-          "Goldenrod is tall, thin, and grows in clusters. The leaves are thin, pointed ovals with three veins. The tiny yellow flowers grow in tendrils at the top.",
+          "Goldenrod is tall, thin, and grows in clusters. The leaves are thin, pointed ovals with three veins. The tiny yellow flowers grow in tendrils at the top. It spreads through rhizomes, and can get out of hand very quickly.",
         image: "/images/goldenrod.jpg",
         location: "Prairie & waste areas across North America",
         otherNames: "Solidago, Aaron's Rod",
-        uses: "Aid digestion, quell allergy & hay feer symptoms, boost immune system",
+        uses: "Aid digestion, quell allergy & hay fever symptoms, boost immune system",
       },
       {
         id: 2,
