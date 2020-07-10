@@ -16,7 +16,7 @@
       </div>
       <div>
         <span style="color: #dfc800;">Description: </span>
-        <span>{{ herb.description }}</span>
+        <span class="herb-content">{{ herb.description }}</span>
       </div>
       <div>
         <span style="color: #dfc800;">Found In: </span>
@@ -128,7 +128,10 @@ img {
 }
 
 #main-container {
+  height: 580px;
+  margin: 0 auto;
   position: relative;
+  width: 970px;
 }
 
 #main-container::before,
@@ -154,5 +157,9 @@ img {
 }
 #nav-container {
   position: relative;
+}
+
+.herb-content {
+  /* display:inline-block;width:300px; */
 }
 </style>
