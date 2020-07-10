@@ -2,11 +2,13 @@
   <div id="main-container">
     <div id="embellishment"></div>
     <img :src="herb.image" alt="" height="300" width="300" />
-    <p id="back" @click="goBack(herb.id)">&#8592;</p>
-    <p id="forward" @click="goForward(herb.id)">&#8594;</p>
-    <h2 style="color: #ddd;">
-      {{ herb.name }}
-    </h2>
+    <div id="nav-container">
+      <h2 style="color: #ddd;">
+        {{ herb.name }}
+      </h2>
+      <p id="back" @click="goBack(herb.id)">&#8592;</p>
+      <p id="forward" @click="goForward(herb.id)">&#8594;</p>
+    </div>
     <div id="content-container">
       <div>
         <span style="color: #dfc800;">Other Names: </span>
@@ -79,6 +81,7 @@ img {
 
 #back,
 #forward {
+  bottom: -35px;
   color: #dfc800;
   cursor: pointer;
   font-size: 2rem;
@@ -89,12 +92,10 @@ img {
 
 #back {
   left: 335px;
-  bottom: 183px;
 }
 
 #forward {
   left: 604px;
-  bottom: 183px;
 }
 
 #content-container {
@@ -150,5 +151,8 @@ img {
   border-bottom: 10px solid #dfc800;
   bottom: -30px;
   right: 200px;
+}
+#nav-container {
+  position: relative;
 }
 </style>
