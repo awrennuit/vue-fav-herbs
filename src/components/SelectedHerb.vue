@@ -10,20 +10,20 @@
       <p id="forward" @click="goForward(herb.id)">&#8594;</p>
     </div>
     <div id="content-container">
-      <div>
-        <span style="color: #dfc800;">Other Names: </span>
+      <div class="content-grid">
+        <span class="content-label">Other Names: </span>
         <span>{{ herb.otherNames }}</span>
       </div>
-      <div>
-        <span style="color: #dfc800;">Description: </span>
-        <span class="herb-content">{{ herb.description }}</span>
+      <div class="content-grid">
+        <span class="content-label">Description: </span>
+        <span>{{ herb.description }}</span>
       </div>
-      <div>
-        <span style="color: #dfc800;">Found In: </span>
+      <div class="content-grid">
+        <span class="content-label">Found In: </span>
         <span>{{ herb.location }}</span>
       </div>
-      <div>
-        <span style="color: #dfc800;">Uses: </span>
+      <div class="content-grid">
+        <span class="content-label">Uses: </span>
         <span>{{ herb.uses }}</span>
       </div>
     </div>
@@ -128,7 +128,7 @@ img {
 }
 
 #main-container {
-  height: 580px;
+  height: 620px;
   margin: 0 auto;
   position: relative;
   width: 970px;
@@ -159,7 +159,14 @@ img {
   position: relative;
 }
 
-.herb-content {
-  /* display:inline-block;width:300px; */
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 3.5fr;
+}
+
+.content-grid .content-label {
+  color: #dfc800;
+  justify-self: end;
+  padding-right: 5px;
 }
 </style>
