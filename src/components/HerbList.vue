@@ -59,6 +59,7 @@ export default {
     -5px -5px 10px #000;
   color: #ddd;
   height: 350px;
+  margin: 1rem;
   position: relative;
   width: 280px;
 }
