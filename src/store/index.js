@@ -61,7 +61,7 @@ export default new Vuex.Store({
           "Mugwort is an unassuming 'weed' that grows everywhere. It can grow over six feet tall. The leaves remind people of seaweed and have silvery undersides. The flowers are quite small and ordinary looking. Mugwort will quickly overtake a garden bed or even the whole yard if given the chance.",
         image: "/images/mugwort.jpg",
         location: "Waste areas mostly in the Northern Hemisphere",
-        otherNames: "Artemisia",
+        otherNames: "Artemisia, Moxa, Cronewort, Sailor's Tobacco",
         uses: "Relieve sore muscles, calm an anxious mind, keep period regular",
       },
       {
