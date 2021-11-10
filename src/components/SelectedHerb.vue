@@ -161,23 +161,4 @@ h1 {
   text-align: left;
   width: 500px;
 }
-
-.content-grid {
-  display: grid;
-  grid-template-columns: 1fr 3.5fr;
-}
-
-.content-label {
-  color: #dfc800;
-  justify-self: end;
-  padding-right: 5px;
-}
-
-.content-description {
-  color: #ffffffc2;
-}
-
-.content-grid span {
-  padding-bottom: 10px;
-}
 </style>
