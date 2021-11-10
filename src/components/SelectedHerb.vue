@@ -8,28 +8,19 @@
       <button class="forward" @click="goForward(herb.id)">&#8594;</button>
     </div>
     <div class="content-container">
-      <div class="content-grid">
-        <span class="content-label">Other Names: </span>
-        <span class="content-description">{{ herb.otherNames }}</span>
-      </div>
-      <div class="content-grid">
-        <span class="content-label">Description: </span>
-        <span class="content-description">{{ herb.description }}</span>
-      </div>
-      <div class="content-grid">
-        <span class="content-label">Found In: </span>
-        <span class="content-description">{{ herb.location }}</span>
-      </div>
-      <div class="content-grid">
-        <span class="content-label">Uses: </span>
-        <span class="content-description">{{ herb.uses }}</span>
-      </div>
+      <herb-content label="Other Names: " :description="herb.otherNames" />
+      <herb-content label="Description: " :description="herb.description" />
+      <herb-content label="Found In: " :description="herb.location" />
+      <herb-content label="Uses: " :description="herb.uses" />
     </div>
   </div>
 </template>
 
 <script>
+import HerbContent from './HerbContent.vue';
+
 export default {
+  components: { HerbContent },
   data() {
     return {
       herb: this.$store.state.selectedHerb,
